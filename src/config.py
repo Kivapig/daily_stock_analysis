@@ -284,6 +284,8 @@ class Config:
         serpapi_keys_str = os.getenv('SERPAPI_API_KEYS', '')
         serpapi_keys = [k.strip() for k in serpapi_keys_str.split(',') if k.strip()]
         
+        warnings.append("警告：os.getenv('OPENAI_API_KEY'): " + os.getenv('OPENAI_API_KEY'))
+        
         return cls(
             stock_list=stock_list,
             feishu_app_id=os.getenv('FEISHU_APP_ID'),
